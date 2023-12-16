@@ -6,9 +6,19 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * 用于注解每日最多执行一次的方法
+ * 限制方法调用频率的注解
  */
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface DailyExecution {
+public @interface LimitCalling {
+
+    /**
+     * 冻结时间 默认 60 秒
+     */
+    int freezePeriod() default 60;
+
+    /**
+     * 容忍错误次数 默认 3 次
+     */
+    int toleration() default 3;
 }
