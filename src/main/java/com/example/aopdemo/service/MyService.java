@@ -1,11 +1,11 @@
 package com.example.aopdemo.service;
 
-import java.util.Date;
-
 public interface MyService {
 
     /**
-     * 方法3，使用缓存，缓存过期时间为指定时刻
+     * 更新用户的登录时间，该方法会被拦截，保证每个用户每天最多更新一次
+     * @param userId 用户id
+     * @return 若方法被拦截，返回false，否则返回true
      */
-    boolean methodWithCacheMode2(String userId);
+    boolean updateLoginTime(String userId);
 }

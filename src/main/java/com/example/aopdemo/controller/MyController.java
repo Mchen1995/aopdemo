@@ -13,6 +13,6 @@ public class MyController {
     @GetMapping("greet")
     public boolean greet() {
         String userId = "891421";
-        return myService.methodWithCacheMode2(userId);  // 方法被代理拦截后，其返回值是代理的返回值
+        return myService.updateLoginTime(userId);  // 方法被代理拦截后，其返回值是代理的返回值
     }
 }
