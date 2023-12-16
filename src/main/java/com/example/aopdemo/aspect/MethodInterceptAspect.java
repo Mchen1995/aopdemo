@@ -10,15 +10,18 @@ import java.time.ZoneId;
 import java.util.Date;
 import java.util.Map;
 
+/**
+ * 方法拦截切面类
+ */
 @Aspect
 @Component
-public class DailyExecutionAspect {
+public class MethodInterceptAspect {
     /**
      * 保存用户的登录时间
      */
     private final Map<String, Date> userLoginTimeMap;
 
-    public DailyExecutionAspect(Map<String, Date> userLoginTimeMap) {
+    public MethodInterceptAspect(Map<String, Date> userLoginTimeMap) {
         this.userLoginTimeMap = userLoginTimeMap;
     }
 
